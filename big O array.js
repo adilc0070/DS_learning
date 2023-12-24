@@ -57,17 +57,17 @@ arr.forEach((value) => { // O(n)
     console.log(value);
 })
 
-let arr2 = arr.map((value)=>{
+let arr2 = arr.map((value) => {
     return value * 2;
 })
 console.log(arr2);
 
-let arr3 = arr.filter((value)=>{
+let arr3 = arr.filter((value) => {
     return value % 2 === 0;
 })
 console.log(arr3);
 
-let arr4 = arr.reduce((acc, value)=>{
+let arr4 = arr.reduce((acc, value) => {
     return acc + value;
 })
 console.log(arr4);

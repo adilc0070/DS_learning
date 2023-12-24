@@ -10,7 +10,7 @@
 // example for factorial time
 function factorial(n) {
     for (let i = n - 1; i > 1; i--) {
-        n *= i; 
+        n *= i;
     }
     return n;
 }
@@ -22,7 +22,7 @@ function factorial(n) {
 // example for exponential time
 function exponential(n) {
     for (let i = 0; i < n; i++) {
-        n *= 2; 
+        n *= 2;
     }
     return n;
 }
