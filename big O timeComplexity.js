@@ -81,3 +81,14 @@ function exponential(n) {
     }
 }
 // exponential(3);
+
+
+
+for (let n = 1; n <= 5; n++) {
+    console.log("n: ", n);
+    console.log("O(1): ", '*'.repeat(1));
+    console.log("O(n): ", '*'.repeat(n));
+    console.log("O(n^2): ", '*'.repeat(n * n));
+    console.log("O(2^n): ", '*'.repeat(Math.pow(2, n)));
+    console.log("-----");
+}

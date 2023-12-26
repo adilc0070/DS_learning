@@ -30,3 +30,5 @@ function factorial(num) {
     }
     return result
 }
+
+// console.log(findFactorialWhile(8))
