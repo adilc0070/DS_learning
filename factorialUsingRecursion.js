@@ -5,7 +5,7 @@ function factUsngRcrsion(num) {
     return num * factUsngRcrsion(num - 1)
 }
 
-console.log("factoral: ", factUsngRcrsion(5));
+console.log("factoral: ", factUsngRcrsion(8));
 
 
 
