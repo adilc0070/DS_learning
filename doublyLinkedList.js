@@ -65,7 +65,7 @@ class DoublyLinkedList{
             if(this.head){
                 this.head.prev=newNode
             }
-            this.head=this.head
+            this.head=newNode
         }else{
             let curr=this.head
             for(let i=0;i<index-1;i++){
@@ -91,6 +91,7 @@ list.apend(458)
 list.prepend(14)
 list.apend(45)
 list.insert(1,1)
-console.log("sizeof",list.getSize());
 
+list.insert(900,0)
+console.log("sizeof",list.getSize());
 list.print()
