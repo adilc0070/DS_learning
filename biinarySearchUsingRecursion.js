@@ -16,4 +16,4 @@ function search(arr,target,left,right){
     }
 }
 
-console.log(recusiveBinerySearch([10,20,22,24,30,34,36,40,50,64,73,90],22))
+console.log(recusiveBinerySearch([10,20,22,24,30,34,36,40,50,64,73,90],23))
