@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "name": "ds_learning",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
