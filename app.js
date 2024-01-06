@@ -1,16 +1,23 @@
-
-function insertion(arr){
-    for(let  i=1;i<arr.length;i++){
-        let checkingElement=arr[i]
-        let j=i-1
-        while(j>=0&&arr[j]>checkingElement){
-            arr[j+1]=arr[j]
-            j-=1
-        }
-        arr[j+1]=checkingElement
+function mergeSort(arr){
+    if(arr.length<2){
+        // console.log(arr);
+        return arr
     }
-    console.log(arr);
+    let mid=Math.floor(arr.length/2)
+    let leftA=arr.slice(0,mid)
+    let rightA=arr.slice(mid)
+    return merge(mergeSort(leftA),mergeSort(rightA))
 }
-
-
-insertion([1,5,89,56,3,2,17,45,2,98,4,4651,62])
+function merge(left,right){
+    let sorted=[]
+    while(left.length&&right.length){
+        if(left[0]<right[0]){
+            sorted.push(left.shift())
+        }else{
+            sorted.push(right.shift())
+        }
+    }
+    return [...sorted,...left,...right]
+}
+// console.log('sorted Array:',mergeSort([1,78,1,56,12,56,48,59,35,4215,7,8]));
+mergeSort([1,78,1,56,12,56,48,59,35,0,4215,7,8])
