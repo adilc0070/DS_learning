@@ -8,7 +8,7 @@ class Hash{
         for(let i=0;i<key.length;i++){
             inde+=key.charCodeAt(i)
         }
-        return inde
+        return inde % this.size
     }
     set(key,value){
         let index=this.hash(key)
@@ -39,6 +39,6 @@ hash.set('name','adil')
 hash.set('age',20)
 hash.set('place','ads')
 hash.set('lass','78')
-hash.set('ssal','')
+hash.set('ssal','78')
 hash.display()
 console.log(hash);
