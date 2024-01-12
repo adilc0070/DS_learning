@@ -42,3 +42,4 @@ hash.set('lass','78')
 hash.set('ssal','78')
 hash.display()
 console.log(hash);
+console.log(Math.floor(Math.random()*815));
