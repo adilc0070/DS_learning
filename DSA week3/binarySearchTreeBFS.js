@@ -6,7 +6,7 @@ class Node{
     }
 }
 class BinarySearchTree{
-    constructor() {
+    constructor(){
         this.root=null
     }
     isEmpty(){
@@ -48,43 +48,78 @@ class BinarySearchTree{
             }
         }
     }
-    perOrder(root){
+    preOrder(root){
         if(root){
             console.log(root.value);
-            this.perOrder(root.left)
-            this.perOrder(root.right)
+            this.preOrder(root.left)
+            this.preOrder(root.right)
         }
     }
     inOrder(root){
         if(root){
-            /* accending order (default)*/
             this.inOrder(root.left)
-            console.log(root.value)
+            console.log(root.value);
             this.inOrder(root.right)
-            /* deccending order */
-            // this.inOrder(root.right)
-            // console.log(root.value)
-            // this.inOrder(root.left)
         }
     }
     postOrder(root){
         if(root){
             this.postOrder(root.left)
             this.postOrder(root.right)
-            console.log(root.value)
+            console.log(root.value);
+        }
+    }
+    bfs(){
+        let queue=[]
+        queue.push(this.root)
+        while(queue.length){
+            let curr=queue.shift()
+            console.log(curr.value);
+            if(curr.left){
+                queue.push(curr.left)
+            }
+            if(curr.right){
+                queue.push(curr.right)
+            }
+        }
+    }
+    min(root){
+        if(!root.left){
+            return root.value
+        }else{
+            return this.min(root.left)
+        }
+    }
+    max(root){
+        if(!root.right){
+            return root.value
+        }else{
+            return this.max(root.right)
         }
     }
 }
 
-
-
 let bst=new BinarySearchTree()
-bst.insert(10)
-bst.insert(5)
+bst.insert(26)
+bst.insert(21)
+bst.insert(28)
 bst.insert(15)
-bst.insert(3)
+bst.insert(10)
 bst.insert(7)
-
-// bst.perOrder(bst.root)
+bst.insert(2)
+bst.insert(23)
+bst.insert(20)
+bst.insert(-1)
+bst.insert(11)
+bst.insert(8)
+bst.insert(24)
+bst.insert(27)
+bst.insert(25)
+// bst.preOrder(bst.root)
 // bst.inOrder(bst.root)
 // bst.postOrder(bst.root)
+
+// bst.bfs()
+
+console.log("max",bst.max(bst.root));
+console.log("min",bst.min(bst.root));

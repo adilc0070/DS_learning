@@ -6,7 +6,7 @@ class Node{
     }
 }
 class BinarySearchTree{
-    constructor() {
+    constructor(){
         this.root=null
     }
     isEmpty(){
@@ -22,13 +22,13 @@ class BinarySearchTree{
     }
     insertValue(newNode,root){
         if(newNode.value<root.value){
-            if(root.left==null){
+            if(root.left===null){
                 root.left=newNode
             }else{
                 this.insertValue(newNode,root.left)
             }
         }else{
-            if(root.right==null){
+            if(root.right===null){
                 root.right=newNode
             }else{
                 this.insertValue(newNode,root.right)
@@ -39,7 +39,7 @@ class BinarySearchTree{
         if(!root){
             return false
         }else{
-            if(root.value===value){
+            if(root.value==value){
                 return true
             }else if(value<root.value){
                 return this.search(root.left,value)
@@ -48,43 +48,8 @@ class BinarySearchTree{
             }
         }
     }
-    perOrder(root){
-        if(root){
-            console.log(root.value);
-            this.perOrder(root.left)
-            this.perOrder(root.right)
-        }
-    }
-    inOrder(root){
-        if(root){
-            /* accending order (default)*/
-            this.inOrder(root.left)
-            console.log(root.value)
-            this.inOrder(root.right)
-            /* deccending order */
-            // this.inOrder(root.right)
-            // console.log(root.value)
-            // this.inOrder(root.left)
-        }
-    }
-    postOrder(root){
-        if(root){
-            this.postOrder(root.left)
-            this.postOrder(root.right)
-            console.log(root.value)
-        }
-    }
 }
-
-
-
 let bst=new BinarySearchTree()
-bst.insert(10)
-bst.insert(5)
 bst.insert(15)
-bst.insert(3)
-bst.insert(7)
-
-// bst.perOrder(bst.root)
-// bst.inOrder(bst.root)
-// bst.postOrder(bst.root)
+bst.insert(10)
+console.log(bst.search(bst.root,15));

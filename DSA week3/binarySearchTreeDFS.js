@@ -57,21 +57,9 @@ class BinarySearchTree{
     }
     inOrder(root){
         if(root){
-            /* accending order (default)*/
             this.inOrder(root.left)
             console.log(root.value)
             this.inOrder(root.right)
-            /* deccending order */
-            // this.inOrder(root.right)
-            // console.log(root.value)
-            // this.inOrder(root.left)
-        }
-    }
-    postOrder(root){
-        if(root){
-            this.postOrder(root.left)
-            this.postOrder(root.right)
-            console.log(root.value)
         }
     }
 }
@@ -86,5 +74,4 @@ bst.insert(3)
 bst.insert(7)
 
 // bst.perOrder(bst.root)
-// bst.inOrder(bst.root)
-// bst.postOrder(bst.root)
+bst.inOrder(bst.root)
