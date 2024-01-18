@@ -39,5 +39,5 @@ class trie{
 
 const t = new trie()
 t.insert('sinan')
-t.insert("sidan")
-console.log(t.search('sinan'));
+t.insert("sian")
+console.log(t.search('sian'));
