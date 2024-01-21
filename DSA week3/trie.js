@@ -32,3 +32,6 @@ class Trie{
     
     
 }
+let trie = new Trie()
+trie.insert('adil')
+console.log(trie.search('adil'))

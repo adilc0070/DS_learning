@@ -40,6 +40,52 @@ class Graph{
         }
         delete this.adjecencyList[vertex]
     }
+    // DFS recursive function
+    dfsRecursive(startVertex, visited = {}) {
+        if (!this.adjecencyList[startVertex]) {
+            return;
+        }
+
+        visited[startVertex] = true;
+        console.log(startVertex);
+
+        for (let neighbor of this.adjecencyList[startVertex]) {
+            if (!visited[neighbor]) {
+                this.dfsRecursive(neighbor, visited);
+            }
+        }
+    }
+
+    // DFS method
+    dfs(startVertex) {
+        const visited = {};
+        this.dfsRecursive(startVertex, visited);
+    }
+
+    // BFS method
+    bfs(startVertex) {
+        const queue = [];
+        const visited = {};
+        
+        if (!this.adjecencyList[startVertex]) {
+            return;
+        }
+
+        queue.push(startVertex);
+        visited[startVertex] = true;
+
+        while (queue.length > 0) {
+            const currentVertex = queue.shift();
+            console.log(currentVertex);
+
+            for (let neighbor of this.adjecencyList[currentVertex]) {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    queue.push(neighbor);
+                }
+            }
+        }
+    }
 }
 
 let graph=new Graph()
@@ -48,5 +94,11 @@ graph.addEdges('A','B')
 graph.addEdges('A','C')
 graph.addEdges('C','B')
 graph.addEdges('A','D')
-graph.removeVertex()
+// graph.removeVertex('A')
 graph.display()
+
+console.log('DFS:');
+graph.dfs('A');
+
+console.log('\nBFS:');
+graph.bfs('A');
