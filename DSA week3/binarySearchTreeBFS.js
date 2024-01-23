@@ -84,14 +84,14 @@ class BinarySearchTree{
         }
     }
     min(root){
-        if(!root.left){
+        if(!root.left.left){
             return root.value
         }else{
             return this.min(root.left)
         }
     }
     max(root){
-        if(!root.right){
+        if(!root.right.right){
             return root.value
         }else{
             return this.max(root.right)
