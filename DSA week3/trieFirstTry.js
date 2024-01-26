@@ -41,21 +41,21 @@ class Trie{
             this.dfs(node.child[char], currentWord + char, words);
         }
     }
-    printAllWords() {
-        const words = [];
-        this._dfs(this.root, '', words);
-        console.log(words);
-    }
+    // printAllWords() {
+    //     const words = [];
+    //     this._dfs(this.root, '', words);
+    //     console.log(words);
+    // }
 
-    _dfs(node, currentWord, words) {
-        if (node.end) {
-            words.push(currentWord);
-        }
+    // _dfs(node, currentWord, words) {
+    //     if (node.end) {
+    //         words.push(currentWord);
+    //     }
 
-        for (const char in node.child) {
-            this._dfs(node.child[char], currentWord + char, words);
-        }
-    }
+    //     for (const char in node.child) {
+    //         this._dfs(node.child[char], currentWord + char, words);
+    //     }
+    // }
 }
 
 
