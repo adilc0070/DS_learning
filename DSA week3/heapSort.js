@@ -20,12 +20,10 @@ function heapifyDown(arr, heapSize, index) {
 function heapSort(arr) {
     let n = arr.length;
 
-    // Build max heap
     for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
         heapifyDown(arr, n, i);
     }
 
-    // Heap sort
     for (let i = n - 1; i > 0; i--) {
         [arr[0], arr[i]] = [arr[i], arr[0]];
         heapifyDown(arr, i, 0);
@@ -34,7 +32,6 @@ function heapSort(arr) {
     return arr;
 }
 
-// Example usage:
 let array = [12, 11, 13, 5, 6, 7];
 console.log("Original Array: ", array);
 let sortedArray = heapSort(array);
